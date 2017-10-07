@@ -63,3 +63,8 @@ Once you have installed and activated WooCommerce, you may install and activate 
 ## Changelog
 
 none
+
+## Donate
+
+XMR Address   : `41kGrwzD9jzTgdRJbGZ3YbGBTJezqWYD1AGyRgBQkTmcXkyJoGABQ1V5ra1vxiQmd4Hk3dsuxbvqKR3sJqN9YN8y7v3oVWr`
+SIKKA Address : `39eYXNT9K4w2oJyP8VVfbtRErPqnudarPZFRqABCrwbSEAs7Ma64sosS1rn1bzLDK4ZWwUiHfyWCcUBG1iVWVXKYUut3xsm`
