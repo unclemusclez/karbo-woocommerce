@@ -34,8 +34,8 @@ $g_SIKKAWC__config_defaults = array (
    // ------- General Settings
    'service_provider'				 						  =>  'local_wallet',		// 'blockchain_info'
    'address'                              =>  '',
-   'rpc_bind_ip'                          =>  '',
-   'rpc_bind_port'                        =>  '',
+   'rpc_bind_ip'                          =>  '127.0.0.1',
+   'rpc_bind_port'                        =>  '8080',
    'confs_num'                            =>  '4', // number of confirmations required before accepting payment.
    'exchange_multiplier'                  =>  '1.00',
 

@@ -183,7 +183,7 @@ function SIKKAWC__render_general_settings_page_html ()
         <tr valign="top">
           <th scope="row">RPC_Bind_IP:</th>
           <td>
-            <input type="text" name="assigned_address_expires_in_mins" value="<?php echo $sikkawc_settings['rpc_bind_ip']; ?>" size="15" />
+            <input type="text" name="rpc_bind_ip" value="<?php echo $sikkawc_settings['rpc_bind_ip']; ?>" size="15" />
             <p class="description">
               Walletd IP address.
             </p>
@@ -193,7 +193,7 @@ function SIKKAWC__render_general_settings_page_html ()
         <tr valign="top">
           <th scope="row">RPC_Bind_Port:</th>
           <td>
-            <input type="text" name="assigned_address_expires_in_mins" value="<?php echo $sikkawc_settings['rpc_bind_port']; ?>" size="15" />
+            <input type="text" name="rpc_bind_port" value="<?php echo $sikkawc_settings['rpc_bind_port']; ?>" size="5" />
             <p class="description">
               Walletd port.
             </p>
