@@ -8,7 +8,7 @@ Tags: sikka, sikka wordpress plugin, sikka plugin, sikka payments, accept sikka,
 
 Requires at least: 3.0.1
 
-Tested up to: 4.4.1
+Tested up to: Wordpress 4.8.2, WooCommerce 3.1.2
 
 Stable tag: trunk
 
