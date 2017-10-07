@@ -14,8 +14,10 @@ function SIKKAWC__generate_new_Sikka_payment_id ($sikkawc_settings=false, $order
 
   if (!$sikkawc_settings)
     $sikkawc_settings = SIKKAWC__get_settings ();
-
-  $wallet_api = New ForkNoteWalletd("http://127.0.0.1:18888");
+  $rpc_bind_ip = $sikkawc_settings['rpc_bind_ip'];
+  $rpc_bind_port = $sikkawc_settings['rpc_bind_port'];
+  $rpc_local = $rpc_bind_ip . ":" . $rpc_bind_port;
+  $wallet_api = New ForkNoteWalletd("http://" . $rpc_local);
   $new_sikka_payment_id = $wallet_api->makePaymentId();
 
   try {
@@ -64,7 +66,7 @@ function SIKKAWC__generate_new_Sikka_payment_id ($sikkawc_settings=false, $order
 //===========================================================================
 
 //===========================================================================
-// Function makes sure that returned value is valid array
+// Function makes sure that returned value is validrray
 function SIKKAWC_unserialize_address_meta ($flat_address_meta)
 {
    $unserialized = @unserialize($flat_address_meta);
@@ -110,7 +112,10 @@ function SIKKAWC__getreceivedbyaddress_info ($address_request_array, $sikkawc_se
 	$api_timeout            = $address_request_array['api_timeout'];
 
   $funds_received = false;
-  $fnw = New ForkNoteWalletd("http://127.0.0.1:18888");
+  $rpc_bind_ip = $sikkawc_settings['rpc_bind_ip'];
+  $rpc_bind_port = $sikkawc_settings['rpc_bind_port'];
+  $rpc_local = $rpc_bind_ip . ":" . $rpc_bind_port;
+  $fnw = New ForkNoteWalletd("http://" . $rpc_local);
   $status = $fnw->getStatus();
 
   $t = $fnw->getTransactions( $status["blockCount"] - 50000, false, 50000, $sikka_payment_id, [$sikka_address]);
@@ -484,7 +489,10 @@ function SIKKAWC__is_gateway_valid_for_use (&$ret_reason_message=NULL)
           $address = $sikkawc_settings['address'];
 
           try{
-            $wallet_api = New ForkNoteWalletd("http://127.0.0.1:18888");
+            $rpc_bind_ip = $sikkawc_settings['rpc_bind_ip'];
+            $rpc_bind_port = $sikkawc_settings['rpc_bind_port'];
+            $rpc_local = $rpc_bind_ip . ":" . $rpc_bind_port;
+            $wallet_api = New ForkNoteWalletd("http://" . $rpc_local);
             $address_balance = $wallet_api->getBalance($address);
           }
           catch(Exception $e) {

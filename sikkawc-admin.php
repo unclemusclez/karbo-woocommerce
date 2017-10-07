@@ -33,7 +33,9 @@ $g_SIKKAWC__config_defaults = array (
 
    // ------- General Settings
    'service_provider'				 						  =>  'local_wallet',		// 'blockchain_info'
-   'address'                              =>  '', 
+   'address'                              =>  '',
+   'rpc_bind_ip'                          =>  '',
+   'rpc_bind_port'                        =>  '',
    'confs_num'                            =>  '4', // number of confirmations required before accepting payment.
    'exchange_multiplier'                  =>  '1.00',
 
@@ -69,9 +71,12 @@ function SIKKAWC__withdraw ()
 {
     $sikkawc_settings = SIKKAWC__get_settings();
     $address = $sikkawc_settings['address'];
+    $rpc_bind_ip = $sikkawc_settings['rpc_bind_ip'];
+    $rpc_bind_port = $sikkawc_settings['rpc_bind_port'];
+    $rpc_local = $rpc_bind_ip . ":" . $rpc_bind_port;
 
     try{
-      $wallet_api = New ForkNoteWalletd("http://127.0.0.1:18888");
+      $wallet_api = New ForkNoteWalletd("http://" . $rpc_local);
       $address_balance = $wallet_api->getBalance($address);
     }
     catch(Exception $e) {

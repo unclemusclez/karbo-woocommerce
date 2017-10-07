@@ -67,9 +67,12 @@ HHHH;
   {
     $sikkawc_settings = SIKKAWC__get_settings();
     $address = $sikkawc_settings['address'];
+    $rpc_bind_ip = $sikkawc_settings['rpc_bind_ip'];
+    $rpc_bind_port = $sikkawc_settings['rpc_bind_port'];
+    $rpc_local = $rpc_bind_ip . ":" . $rpc_bind_port;
 
     try{
-      $wallet_api = New ForkNoteWalletd("http://127.0.0.1:18888");
+      $wallet_api = New ForkNoteWalletd("http://" . $rpc_local);
       $address_balance = $wallet_api->getBalance($address);
     }
     catch(Exception $e) {
@@ -173,6 +176,26 @@ function SIKKAWC__render_general_settings_page_html ()
             <textarea style="width:75%;" name="address"><?php echo $sikkawc_settings['address']; ?></textarea>
             <p class="description">
               Set up your local wallet with the instructions for <a href="http://forknote.net/documentation/rpc-wallet/">the ForkNote RPC Wallet</a> or <a href="https://wiki.bytecoin.org/wiki/Bytecoin_RPC_Wallet">Reference(Bytecoin) RPC Wallet</a>. Then copy in one of your wallet addresses.
+            </p>
+          </td>
+        </tr>
+
+        <tr valign="top">
+          <th scope="row">RPC_Bind_IP:</th>
+          <td>
+            <input type="text" name="assigned_address_expires_in_mins" value="<?php echo $sikkawc_settings['rpc_bind_ip']; ?>" size="15" />
+            <p class="description">
+              Walletd IP address.
+            </p>
+          </td>
+        </tr>
+
+        <tr valign="top">
+          <th scope="row">RPC_Bind_Port:</th>
+          <td>
+            <input type="text" name="assigned_address_expires_in_mins" value="<?php echo $sikkawc_settings['rpc_bind_port']; ?>" size="15" />
+            <p class="description">
+              Walletd port.
             </p>
           </td>
         </tr>

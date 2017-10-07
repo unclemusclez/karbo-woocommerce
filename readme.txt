@@ -36,7 +36,7 @@ Once you have installed and activated WooCommerce, you may install and activate 
 1.  Install WooCommerce plugin and configure your store (if you haven't done so already - http://wordpress.org/plugins/woocommerce/).
 2.  Install "Sikka for WooCommerce" wordpress plugin just like any other Wordpress plugin.
 3.  Activate.
-4.  Download and install on your computer Sikka wallet program from: https://sikka.org/
+4.  Download and install on your computer Sikka wallet program from: http://getsikka.org/
 5.  Copy and setup your wallet on the server. Change permission to executable. Run sikkad as a service.
 6.  Generate Container (optionally reset containter to view only container and add view only address). Run walletd as a service.
 7.  Get your wallet address from walletd.

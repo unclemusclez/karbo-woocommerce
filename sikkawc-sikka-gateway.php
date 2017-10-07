@@ -102,7 +102,11 @@ function SIKKAWC__plugins_loaded__load_Sikka_gateway ()
 	    	
 	    	else if ($this->service_provider=='local_wallet')
 	    	{
-	    		$wallet_api = New ForkNoteWalletd("http://127.0.0.1:18888");
+	    		$rpc_bind_ip = $sikkawc_settings['rpc_bind_ip']; // Added for cutomization
+                $rpc_bind_port = $sikkawc_settings['rpc_bind_port'];
+                $rpc_local = $rpc_bind_ip . ":" . $rpc_bind_port;
+
+	    		$wallet_api = New ForkNoteWalletd("http://" . $rpc_local);
 	    		$sikkawc_settings = SIKKAWC__get_settings();
           		$address = $sikkawc_settings['address'];
 	    		if (!$address)
@@ -398,7 +402,11 @@ function SIKKAWC__plugins_loaded__load_Sikka_gateway ()
   		$ret_info_array = array();
 
 
-               $wallet_api = New ForkNoteWalletd("http://127.0.0.1:18888");
+               $rpc_bind_ip = $sikkawc_settings['rpc_bind_ip'];
+               $rpc_bind_port = $sikkawc_settings['rpc_bind_port'];
+               $rpc_local = $rpc_bind_ip . ":" . $rpc_bind_port;
+               
+               $wallet_api = New ForkNoteWalletd("http://" . $rpc_local);
 
                $sikka_payment_id = SIKKAWC__generate_new_Sikka_payment_id($sikkawc_settings, $order_info);
 
