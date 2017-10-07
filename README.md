@@ -14,7 +14,7 @@ Stable tag: trunk
 
 License: BipCot NoGov Software License bipcot.org
 
-License URI: https://github.com/Sikkavanets/sikka-woocommerce/blob/master/LICENSE
+License URI: https://github.com/unclemusclez/sikka-woocommerce/blob/master/LICENSE
 
 ## Description
 
