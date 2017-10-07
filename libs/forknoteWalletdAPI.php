@@ -3,9 +3,9 @@
  /**
  / ForkNote Walletd API Wrapper
  /
- / For ForkNote Coins: bikercoin karbo bitcoal bytecoin crossnote
+ / For ForkNote Coins: bikercoin sikka bitcoal bytecoin crossnote
  /                     cryptopeg dashcoin dinastycoin ethanolium fosscoin
- /                     karbowanec magnatoj quazarcoin redwind xcicoin
+ /                     sikkawanec magnatoj quazarcoin redwind xcicoin
  /
  / https://github.com/KittyCatTech/forknote-api-php
  / License: BipCot NoGov Software License
