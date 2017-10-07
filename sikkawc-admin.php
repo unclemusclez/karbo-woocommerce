@@ -44,7 +44,7 @@ $g_SIKKAWC__config_defaults = array (
    'enable_soft_cron_job'                 =>  '1',    // Enable "soft" Wordpress-driven cron jobs.
 
    // ------- Special settings
-   'exchange_rates'                       =>  array('EUR' => array('method|type' => array('time-last-checked' => 0, 'exchange_rate' => 1), 'GBP' => array())),
+   'exchange_rates'                       =>  array('USD' => array('method|type' => array('time-last-checked' => 0, 'exchange_rate' => 1), 'USD' => array())),
    );
 //===========================================================================
 
